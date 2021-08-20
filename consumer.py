@@ -3,7 +3,7 @@ import json
 
 if __name__ == '__main__':
     consumer = KafkaConsumer(
-        'registered_users',
+        'registered_user',
         bootstrap_servers='localhost:9092',
         auto_offset_reset='earliest',
         group_id='consumer_group-a'

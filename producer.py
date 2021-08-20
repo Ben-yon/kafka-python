@@ -15,11 +15,11 @@ def get_partition(key, all, available):
 
 
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
-                         value_serializer=json_serializer, partitioner=get_partition)
+                         value_serializer=json_serializer)
 
 if __name__ == '__main__':
     while 1 == 1:
         registered_user = get_registered_user()
         print(registered_user)
-        producer.send('registered_users', registered_user)
+        producer.send('registered_user', registered_user)
         time.sleep(4)
